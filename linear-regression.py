@@ -18,21 +18,23 @@ def calculate_loss(x, y):
 all_weights = []
 all_mses = [] # Mean squared errors
 
+# To loop though floats
 for w in np.arange(0.0, 4.1, 0.1):
     
     print('W=', w) # Show the weight
     sum_of_all_loss = 0
 
     for x, y in zip(x_data, y_data):
-        hypothesis_x = feed_forward(x) # This is 
+        hypothesis_x = feed_forward(x) # This is our predicted y
         loss = calculate_loss(x, y)
         sum_of_all_loss += loss
         print("x:", x)
         print("y:", y)
         print("Our hypothesis of x (y):", hypothesis_x)
         print("Our loss/error squared for this weight {}:".format(w), loss)
-    
-    print("MSE:", loss/3)
+        print("")
+    print("MSE:", loss/3); print("")
+    print("-------------------------\n")
     all_weights.append(w)
     all_mses.append(loss/3)
 
