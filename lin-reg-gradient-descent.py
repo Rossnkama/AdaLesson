@@ -34,7 +34,7 @@ print("Before training, 4 hours spent studying is predicted to get {} points"
 # Training the AI
 alpha = 0.01
 
-for epoch in range(100):
+for epoch in range(1, 101):
     for x, y in zip(x_data, y_data):
         gradient = compute_gradient(x, y)
         
@@ -44,6 +44,8 @@ for epoch in range(100):
         print("x: {}, y: {}, Gradient:{}".format(x, y, gradient))
     print("Epoch:{}, Weight: {}, Loss: {}"
           .format(epoch, w, loss))
+    print("-----------------------------------")
+    print("")
 
 print("After training, 4 hours spend studying is predicted to get {} points where 4 hours really got 8 points"
       .format(feed_forward(4)))
